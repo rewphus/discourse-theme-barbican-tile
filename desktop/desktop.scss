@@ -9,11 +9,8 @@
     thead{
         display: none;
     }
-    
+
     .topic-list:not(.topic-list-latest) {
-        .activity {
-            display: none;
-        }
         td.category{
             display:none;
         }
