@@ -10,6 +10,15 @@
         display: none;
     }
     
+    .topic-list:not(.topic-list-latest) {
+        .activity {
+            display: none;
+        }
+        td.category{
+            display:none;
+        }
+    }
+    
     .topic-statuses {
         float: right;
         background-color: $secondary;
