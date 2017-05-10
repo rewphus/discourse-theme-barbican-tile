@@ -1,0 +1,13 @@
+//remove blue border from latest post avatar
+.topic-list .posters a:first-child .avatar.latest:not(.single){
+    box-shadow: none;
+    border: 0px;
+}
+
+.category-heading{
+    display: none;
+}
+
+.chat.fullpage .babble-chat{
+    height: 78vh !important;
+}

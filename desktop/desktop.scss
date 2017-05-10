@@ -1,0 +1,362 @@
+#list-area {
+    
+/* Default Tile
+======================================================================================================================= */    
+    
+    .show-more.has-topics {
+        top: -30px;
+    }
+    thead{
+        display: none;
+    }
+    
+    .topic-statuses {
+        float: right;
+        background-color: $secondary;
+        padding: 5px;
+        border-radius: 10px;
+        padding-left: 10px;
+    }
+    
+    .topic-list-item-separator{
+        border: 1px solid $primary;
+        position: relative;
+        float: left;
+        background-color: $secondary;
+        margin-top: 5px;
+        margin-bottom: 3px;
+        
+        td{
+            border-bottom: 0px;
+            
+            span {
+                font-size: 4em;
+                position: absolute;
+                right: 5%;
+                top: 50%;
+            }
+        }
+    }
+    
+    
+    .topic-post-badges{
+        float: right;
+        background-color: $secondary;
+        border-radius: 10%;
+        padding-bottom: 2px;
+    }
+    
+    .topic-list:not(.topic-list-latest)>tbody>tr{
+        float: left;
+        width: 32.35%;
+        box-sizing: border-box;
+        position: relative;
+        height: 260px;
+        border: 1px solid $header-background;
+        margin: 5px;
+        padding: 0px;
+        font-size: 11px;
+        overflow: hidden;
+    }
+    
+    .topic-list:not(.topic-list-latest) .main-link a.title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1em;
+        max-height: 2em;
+        -webkit-line-clamp: 2
+    }
+    
+    .topic-list:not(.topic-list-latest) .topic-actions {
+        clear: none;
+    }
+    
+    .topic-thumbnail{
+        position:absolute;
+        left: 0px;
+        top: 64px;
+        width: 100%;
+        height: 100%;
+        
+        img{
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+    
+    .topic-list:not(.topic-list-latest) td.posters{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+    }
+    
+    .topic-list:not(.topic-list-latest) .posters .avatar.latest {
+        border: 4px solid $secondary !important;
+        padding-right: 50px;
+        background-color: $secondary;
+    }
+    .topic-list:not(.topic-list-latest) .posts {
+        width: 50px;
+        position: absolute;
+        bottom: 18px;
+        left: 54px;
+        text-align: center;
+        
+        &:after{
+            content: "replies";
+            font-size: 1em;
+            display: block;
+        }
+    }
+    
+    .topic-details {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        
+        .topic-title{
+            color: $secondary;
+        }
+    }
+
+
+/* First Topic - Full Width
+======================================================================================================================= */    
+    .topic-list:not(.topic-list-latest)>tbody>tr:first-of-type {
+        border-top: 1px solid $header-background;
+        width: 99%;
+        height: 220px;
+        
+        .topic-list-item-separator td span{
+            right: 30%;
+        }
+        
+        .topic-details {
+            max-height: none;
+            width: 40%;
+            height: 210px;
+            z-index: 2;
+        }
+        
+        .topic-title {
+            font-size: 1.5em;
+            
+            a.title{
+                position: absolute;
+                width: 100%;
+                height: 210px;
+            }
+        }
+        
+        .topic-category{
+            padding-top: 25px;
+            opacity: 1 !important;
+            width: 100%;
+            display: block;
+        }
+        
+        td.posters{
+            left: 0px;
+            bottom: 30px;
+            z-index: 3;
+        }
+        
+        td.posts{
+            bottom: 40px;
+            z-index: 3;
+        }
+        
+        .topic-thumbnail{
+            top: 0px !important;
+            z-index: 1;
+            
+            a{
+                pointer-events: none;
+            }
+            
+            img{
+                -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+                clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+        
+        .topic-list:not(.topic-list-latest) .badge-notification {
+            position: absolute;
+            top: -2px;
+            right: 0px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 100px 100px 0;
+            border-color: transparent #007bff transparent transparent;
+            border-radius: 0px;
+            text-align: right;
+            background-color: rgba(0,0,0,0);
+        }
+    }
+
+/* Second and Third Topic - Half Width
+======================================================================================================================= */    
+    .topic-list:not(.topic-list-latest)>tbody>tr:nth-of-type(2) , .topic-list:not(.topic-list-latest)>tbody>tr:nth-of-type(3) {
+        border-top: 1px solid $header-background;
+        width: 49%;
+        height: 200px;
+        
+        .topic-list-item-separator td span{
+            right: 30%;
+        }
+        
+        .topic-details {
+            max-height: none;
+            width: 100%;
+            height: 190px;
+            z-index: 2;
+        }
+        
+        .topic-thumbnail{
+            width: 50%;
+        }
+        
+        .topic-title {
+            font-size: 1.25em;
+            width: 49%;
+            
+            a.title{
+                height: 190px;
+            }
+        }
+        
+        .topic-category{
+            padding-top: 5px;
+            opacity: 1 !important;
+            width: 100%;
+            display: block;
+        }
+        
+        td.posters{
+            left: 0px;
+            bottom: 0px;
+        }
+        
+        td.posts{
+            bottom: 5px;
+        }
+        
+        .topic-thumbnail{
+            top: 0px !important;
+            left: 50%;
+            z-index: 1;
+        }
+    }
+    
+/* Vertical tiles - Half Width
+======================================================================================================================= */    
+    .topic-list:not(.topic-list-latest)>tbody>tr:nth-child(n+7), .topic-list:not(.topic-list-latest)>tbody>tr:nth-child(n+21):nth-child(-n+28) {
+        width: 19.05%;
+        
+        .topic-list-item-separator td span{
+            right: 30%;
+        }
+        
+        .topic-details {
+            max-height: none;
+            width: 100%;
+            height: 210px;
+            z-index: 2;
+        }
+        
+        .topic-title{
+            max-height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .topic-category{
+            opacity: 1 !important;
+            width: 100%;
+            display: block;
+        }
+        
+        td.posters{
+            right: 5px;
+            left: inherit;
+            bottom: 5px;
+            padding: 0px;
+        }
+        
+        td.posts{
+            bottom: 2px;
+            right: 5px;
+            left: inherit;
+        }
+        
+        .topic-thumbnail{
+            top: 0px !important;
+            
+            a{
+                pointer-events: none;
+            }
+            
+            img{
+                -webkit-clip-path: polygon(0 45%, 100% 21%, 100% 100%, 0% 100%);
+                clip-path: polygon(0 45%, 100% 21%, 100% 100%, 0% 100%);
+            }
+        }
+    }
+
+/* Vertical tiles - Half Width
+======================================================================================================================= */    
+    .topic-list:not(.topic-list-latest)>tbody>tr:nth-child(n+4):nth-child(-n+8), .topic-list:not(.topic-list-latest)>tbody>tr:nth-child(n+14):nth-child(-n+21), .topic-list>tbody>tr:nth-child(n+27) {
+        width: 99% !important;
+        height: 120px;
+        border: 0px !important;
+        border-bottom: 1px solid #e9e9e9 !important;
+        
+        .topic-list-item-separator td span{
+            right: 30%;
+        }
+        
+        .topic-details {
+            max-height: none;
+            z-index: 2;
+        }
+        
+        .topic-category{
+            opacity: 1 !important;
+            width: 100%;
+            display: block;
+        }
+        
+        td.posters{
+            right: 5px;
+            left: inherit;
+            bottom: 5px;
+            padding: 0px;
+        }
+        
+        td.posts{
+            bottom: 2px;
+            right: 5px;
+            left: inherit;
+        }
+        
+        .topic-thumbnail{
+            top: 0px !important;
+            width: 30% !important;
+            right: 10px;
+            left: inherit;
+            
+            a{
+                pointer-events: none;
+            }
+            
+            img{
+                -webkit-clip-path: polygon(0 5%, 100% 21%, 100% 100%, 0% 100%) !important;
+                clip-path: polygon(0 5%, 100% 21%, 100% 100%, 0% 100%) !important;
+            }
+        }
+    }
+}
